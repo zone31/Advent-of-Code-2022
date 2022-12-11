@@ -22,7 +22,7 @@ def do_monkey_round(monkeys, common_value=None):
             else:
                 # Star 2
                 if new_worry > common_value:
-                    new_worry = new_worry - (math.floor(new_worry / common_value) * common_value)
+                    new_worry = new_worry % common_value
             # Throw the stuff
             throw_to = monkey[monkey["test_func"](new_worry)]
             monkeys[throw_to]["items"].append(new_worry)
